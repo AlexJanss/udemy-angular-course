@@ -1,19 +1,20 @@
 import {Recipe} from "./recipe.model";
-import {EventEmitter} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {Ingredient} from "../shared/ingredient.model";
 
+@Injectable()
 export class RecipeService{
     recipeSelected = new EventEmitter<Recipe>();
    private recipes : Recipe[]=[
-        new Recipe('A Test Recipe',
-            'This is simply test',
+        new Recipe('A Salad',
+            'Delicious salad',
             'https://get.pxhere.com/photo/dish-meal-food-vegetable-recipe-cuisine-vegetarian-food-parmigiana-1417897.jpg',
             [
                 new Ingredient('Lettuce', 1),
                 new Ingredient('Oranges', 6),
             ]),
-        new Recipe('A Test Recipe',
-            'This is simply test',
+        new Recipe('Falafel Recipe',
+            'Very nice falafel',
             'https://get.pxhere.com/photo/dish-meal-food-vegetable-recipe-cuisine-vegetarian-food-parmigiana-1417897.jpg',
             [
                 new Ingredient('Falafel', 12),
@@ -21,8 +22,8 @@ export class RecipeService{
             ]),
     ];
 
-getRecipes(){
-    // return a copy of the recipes array
-    return this.recipes.slice();
-}
+    getRecipes(){
+        // return a copy of the recipes array
+        return this.recipes.slice();
+    }
 }
