@@ -31,6 +31,7 @@ export class RecipeEditComponent implements OnInit {
     }
 
     onSubmit() {
+        // obsolet due to reactive approach
         // const newRecipe = new Recipe(
         //   this.recipeForm.value['name'],
         //   this.recipeForm.value['description'],
